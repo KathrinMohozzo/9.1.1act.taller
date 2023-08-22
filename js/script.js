@@ -38,8 +38,9 @@ function showList(array) {
 
 document.addEventListener("DOMContentLoaded", (e) => {
 
-const container = document.getElementById('list'); 
-const stringsOnly = strangeArray.filter(item => typeof item === "string");
+const container = document.getElementById('list');
+const stringsOnly = strangeArray.filter(item => typeof item === "string").map(item => item.toLowerCase());
+
 container.innerHTML += stringsOnly; 
 showList(stringsOnly.sort());
 
