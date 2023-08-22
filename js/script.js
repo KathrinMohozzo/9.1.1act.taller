@@ -39,16 +39,8 @@ function showList(array) {
 document.addEventListener("DOMContentLoaded", (e) => {
 
 const container = document.getElementById('list'); 
-
-let array =  []; 
-
-for (let i = 0; i < strangeArray.length; i++) {
-  if (typeof strangeArray[i] === "string"){
-    array.push(strangeArray[i]);
-  }
-}
-container.innerHTML += array; 
-
-showList(array.sort());
+const stringsOnly = strangeArray.filter(item => typeof item === "string");
+container.innerHTML += stringsOnly; 
+showList(stringsOnly.sort());
 
 });
